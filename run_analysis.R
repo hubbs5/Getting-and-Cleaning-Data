@@ -64,4 +64,5 @@ data <- cbind(y_bind,meas)
 
 #Summarize data and average over the values in the columns
 data_summary <- ddply(data, .(Subject, ActivityDescription), numcolwise(mean))
-
+#Write averaged data to a text file for a summary
+write.table(data_summary, file = "course_project.txt", row.name = FALSE)
